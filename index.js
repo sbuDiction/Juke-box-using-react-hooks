@@ -6,7 +6,7 @@ const router = require('./server/src/routes/v1.router');
 
 app.use(router);
 app.use(cors);
-
+app.use(express.static('client/build'));
 
 app.use((err, req, res, next) => {
     res.status(err.status || 500);
