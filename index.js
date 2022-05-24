@@ -13,6 +13,10 @@ app.use((err, req, res, next) => {
 });
 
 
+let arr = ['Hi']
+arr.toLocaleString().toLocaleLowerCase()
+
+
 app.use((req, res) => {
     res.status(404);
     res.send({ error: "Sorry, can't find that" });

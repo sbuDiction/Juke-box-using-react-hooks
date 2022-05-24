@@ -1,3 +1,4 @@
+import MusicPlayer from "../components/MusicPlayer";
 import SongCard from "../components/SongCard";
 
 const Playlist = () => {
@@ -6,16 +7,17 @@ const Playlist = () => {
     return (
         <>
             <h1>Playlist</h1>
-
-            <div className={`container`}>
+            <hr></hr>
+            <MusicPlayer  />
+            {/* <div className={`container`}>
                 <div className="row">
                     {songsArray.map((song, index) => (
                         <div key={index} className="col">
-                            <SongCard key={index} song={song} id={index} isPlaylist={true} />
+                            <SongCard key={index} song={song} id={index} isPlaylist />
                         </div>
                     ))}
                 </div>
-            </div>
+            </div> */}
         </>
 
     )
