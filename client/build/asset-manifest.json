@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.261a012d.css",
-    "main.js": "/static/js/main.80c98775.js",
+    "main.css": "/static/css/main.b2f67696.css",
+    "main.js": "/static/js/main.45e39233.js",
     "static/js/787.c4e7f8f9.chunk.js": "/static/js/787.c4e7f8f9.chunk.js",
+    "static/media/Image-boohle-sa-Instagram (1).webp": "/static/media/Image-boohle-sa-Instagram (1).20e8af13a30df02a17fe.webp",
     "index.html": "/index.html",
-    "main.261a012d.css.map": "/static/css/main.261a012d.css.map",
-    "main.80c98775.js.map": "/static/js/main.80c98775.js.map",
+    "main.b2f67696.css.map": "/static/css/main.b2f67696.css.map",
+    "main.45e39233.js.map": "/static/js/main.45e39233.js.map",
     "787.c4e7f8f9.chunk.js.map": "/static/js/787.c4e7f8f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.261a012d.css",
-    "static/js/main.80c98775.js"
+    "static/css/main.b2f67696.css",
+    "static/js/main.45e39233.js"
   ]
 }

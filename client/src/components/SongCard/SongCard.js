@@ -1,4 +1,7 @@
-import './SongCard.css'
+import AddToPlaylistButton from '../Buttons/AddToPlaylistButton/AddToPlaylistButton';
+import PlayButton from '../Buttons/PlayButton/PlayButton';
+import './SongCard.css';
+
 const SongCard = ({ song }) => {
 
     return (
@@ -16,8 +19,8 @@ const SongCard = ({ song }) => {
                     </div>
                 </div>
                 {/* <p className="duration"></p> */}
-                {/* <PlayButton url={song.preview} /> */}
-                {/* <HeartButton track={song} /> */}
+                <PlayButton url={song.preview} />
+                <AddToPlaylistButton track={song} />
             </div>
         </>
     )

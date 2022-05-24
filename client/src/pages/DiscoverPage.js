@@ -1,6 +1,10 @@
-const DiscoverPage = () => { 
-    return(
-        <h1 className="container-right">Discover Page</h1>
+import Genres from "../components/Genres";
+
+const DiscoverPage = () => {
+    return (
+        <div className="container-right">
+            <Genres />
+        </div>
     );
 };
 

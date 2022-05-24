@@ -9,8 +9,8 @@ const HomePage = () => {
 
     useEffect(() => {
         let mounted = true;
-        getTopSongs().then(res => {
-            console.log(res)
+        getTopSongs(5964916564).then(res => {
+            console.log(res);
             if (mounted) setSongs(res.tracks.data);
         });
         return () => mounted = false;

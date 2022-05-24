@@ -15,13 +15,10 @@ const SideBar = () => {
                     <span>Discover</span>
                 </NavLink>
 
-                <NavLink to="/radio" className="item" activeclassname="active">
-                    <span>Radio</span>
+                <NavLink to="/playlist" className="item" activeclassname="active">
+                    <span>Playlist</span>
                 </NavLink>
 
-                <NavLink to="/foryou" className="item" activeclassname="active">
-                    <span>For you</span>
-                </NavLink>
             </section>
 
             {/* your library */}
