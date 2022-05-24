@@ -2,7 +2,7 @@ import AddToPlaylistButton from '../Buttons/AddToPlaylistButton/AddToPlaylistBut
 import PlayButton from '../Buttons/PlayButton/PlayButton';
 import './SongCard.css';
 
-const SongCard = ({ song }) => {
+const SongCard = ({ song, isPlaylist }) => {
 
     return (
         <>
@@ -19,8 +19,8 @@ const SongCard = ({ song }) => {
                     </div>
                 </div>
                 {/* <p className="duration"></p> */}
-                <PlayButton url={song.preview} />
-                <AddToPlaylistButton track={song} />
+                {isPlaylist && <PlayButton url={song.preview} />}
+                {!isPlaylist && <AddToPlaylistButton track={song} />}
             </div>
         </>
     )

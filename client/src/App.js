@@ -8,6 +8,7 @@ import './App.css'
 import HomePage from './pages/HomePage';
 import DiscoverPage from './pages/DiscoverPage';
 import PlaylistPage from './pages/PlaylistPage';
+import SearchBar from './components/SearchBar';
 
 function App() {
   // const [results, setResults] = useState([]);
@@ -34,6 +35,7 @@ function App() {
       <BrowserRouter>
         <div className='App'>
           <SideBar />
+          <SearchBar />
           <div className='container-right'>
             <Routes>
               <Route path='/' element={<HomePage />}></Route>

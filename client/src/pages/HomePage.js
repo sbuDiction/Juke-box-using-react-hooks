@@ -1,23 +1,22 @@
 import { useEffect, useState } from "react";
 import { getTopSongs } from "../api/TopSongsApi";
-import ChartAlbums from "../components/ChartAlbums";
+// import ChartAlbums from "../components/ChartAlbums";
 import ChartTracks from "../components/ChartTracks";
+import Loading from "../components/Loading/Loading";
 import PopularGenres from "../components/PopularGenres/PopularGenres";
 
 const HomePage = () => {
     const [songs, setSongs] = useState([]);
+    const [isLoading, setLoading] = useState(true);
 
     useEffect(() => {
         let mounted = true;
         getTopSongs(5964916564).then(res => {
-            console.log(res);
             if (mounted) setSongs(res.tracks.data);
+            setLoading(false)
         });
         return () => mounted = false;
     }, []);
-
-    console.log(songs);
-
     return (
         <>
             <div className="container-right">
@@ -28,8 +27,7 @@ const HomePage = () => {
                         <PopularGenres />
                     </div>
                     <div className="popular-right">
-                        {/* <ChartTracks /> */}
-                        <ChartTracks songs={songs} />
+                        {isLoading ? <Loading /> : <ChartTracks songs={songs} />}
                     </div>
                 </div>
             </div>

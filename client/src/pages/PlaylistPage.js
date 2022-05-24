@@ -9,7 +9,7 @@ const PlaylistPage = () => {
             <h1>Playlist</h1>
             {
                 songsArray.map(song => (
-                    <SongCard song={song} />
+                    <SongCard song={song} isPlaylist />
                 ))
             }
         </>

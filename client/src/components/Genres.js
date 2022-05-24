@@ -1,19 +1,27 @@
 import { useState, useEffect } from "react";
 import { getTopSongs } from "../api/TopSongsApi";
+import Loading from "./Loading/Loading";
 import StandarCard from "./StandardCard/StandardCard";
 
 const Genres = () => {
     const [songs, setSongs] = useState([]);
+    const [isLoading, setLoading] = useState(true);
 
     useEffect(() => {
         let mounted = true;
         getTopSongs(9663729122).then(res => {
             if (mounted) setSongs(res.tracks.data);
+            setLoading(false);
         });
         return () => mounted = false;
-    }, []);
+    }, [songs, isLoading]);
 
-    console.log(songs);
+    if (isLoading)
+        return (
+            <>
+                <Loading />
+            </>
+        );
     return (
         <>
             <h1>Genres</h1>

@@ -5,7 +5,7 @@ const ChartTracks = ({ songs }) => {
         <>
             <h1>Top Songs</h1>
             <section className="top-songs-container">
-                {songs.slice(0, 6).map((track) => (
+                {songs.slice(0, 10).map((track) => (
                     <SongCard song={track} key={track.id} />
                 ))}
             </section>

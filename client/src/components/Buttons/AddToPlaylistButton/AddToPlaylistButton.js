@@ -25,7 +25,7 @@ const AddToPlaylistButton = ({ track }) => {
         setTracks(tracksArray);
     }
 
-    const removeTrack = (id) => { 
+    const removeTrack = (id) => {
         const trackIndex = tracks.indexOf()
     }
 
@@ -44,14 +44,7 @@ const AddToPlaylistButton = ({ track }) => {
     return (
         <>
             <div className='Track-Card'>
-                <FontAwesomeIcon
-                    icon={faHeart}
-                    onClick={handleAdd}
-                />
-
-                {/* <span className={"Feedback" + (this.state.toggle ? " Press" : "")}>
-                    <FontAwesomeIcon icon={faHeart} />
-                </span> */}
+                <button className='add'>Add</button>
             </div>
         </>
     );
