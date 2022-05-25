@@ -3,7 +3,7 @@ import { getTopSongs } from "../api/TopSongsApi";
 import Loading from "./Loading/Loading";
 import StandarCard from "./StandardCard/StandardCard";
 
-const Genres = () => {
+const Genres = ({ isSearch }) => {
     const [songs, setSongs] = useState([]);
     const [isLoading, setLoading] = useState(true);
 
@@ -14,7 +14,9 @@ const Genres = () => {
             setLoading(false);
         });
         return () => mounted = false;
-    }, [songs, isLoading]);
+    });
+
+
 
     if (isLoading)
         return (
@@ -24,7 +26,7 @@ const Genres = () => {
         );
     return (
         <>
-            <h1>Genres</h1>
+            <h1>Discover</h1>
             <div className="genres-section">
                 {songs.map((genre) => (
 

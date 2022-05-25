@@ -12,7 +12,7 @@ const SideBar = () => {
                 </NavLink>
 
                 <NavLink to="/discover" className="item" activeclassname="active">
-                    <span>Discover</span>
+                    <span>Search Music</span>
                 </NavLink>
 
                 <NavLink to="/playlist" className="item" activeclassname="active">

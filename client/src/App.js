@@ -35,7 +35,7 @@ function App() {
       <BrowserRouter>
         <div className='App'>
           <SideBar />
-          <SearchBar />
+          {/* <SearchBar /> */}
           <div className='container-right'>
             <Routes>
               <Route path='/' element={<HomePage />}></Route>

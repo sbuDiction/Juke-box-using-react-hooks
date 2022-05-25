@@ -5,6 +5,7 @@ import { searchAlbums } from "../api/SearchAlbumsApi";
 // import { onSearch } from '../api/SearchApi';
 import { searchArtist } from "../api/SearchArtistsApi";
 import { searchSongs } from "../api/SearchSongSApi";
+import { onSearch } from '../api/SearchApi';
 import SearchResults from "./SearchResults/SearchResults";
 import _ from "lodash";
 
@@ -14,6 +15,7 @@ const SearchBar = () => {
     const [showResults, setResults] = useState(false);
     const [artists, setArtists] = useState([]);
     const [albums, setAlbums] = useState([]);
+    const [deezerRes, setDeezerRes] = useState([]);
 
     const handleSearch = () => {
     }
@@ -21,55 +23,40 @@ const SearchBar = () => {
     const handleOnChange = e => {
         let inputVal = e.target.value;
         if (inputVal !== '') {
-            // setResults(true);
-            console.log('search running..');
-            console.log(showResults);
-            // onSearch(inputVal).then(res => {
-            //     setDeezerRes(res.data);
+            onSearch(inputVal).then(res => {
+                setDeezerRes(res.data);
+                setArtists(res.data)
+                setResults(true);
+                console.log(res.data);
+            });
+
+            // searchArtist(inputVal).then(res => {
+            //     setArtists(res.data);
+            //     console.log(res.data);
             //     setResults(true);
+
+            //     // setResults(true);
             // });
 
-            searchArtist(inputVal).then(res => {
-                setArtists(res.data);
-                console.log(res.data);
-                setResults(true);
+            // searchAlbums(inputVal).then(res => {
+            //     setAlbums(res.data);
+            //     setResults(true);
 
-                // setResults(true);
-            });
+            //     console.log(res.data);
+            // });
 
-            searchAlbums(inputVal).then(res => {
-                setAlbums(res.data);
-                setResults(true);
+            // searchSongs(inputVal).then(res => {
+            //     setTracks(res.data);
+            //     setResults(true);
 
-                console.log(res.data);
-            });
-
-            searchSongs(inputVal).then(res => {
-                setTracks(res.data);
-                setResults(true);
-
-                console.log(res.data);
-            });
+            //     console.log(res.data);
+            // });
 
         }
         setResults(false);
     }
 
-    if (!showResults)
-        return (
-            <>
-                <div className="search-container">
-                    <form onSubmit={handleSearch}>
-                        <FontAwesomeIcon className="icon-search" icon={faSearch} />
-                        <input
-                            type="text"
-                            placeholder="Search Artist, Albums, Songs"
-                            onChange={_.debounce(handleOnChange, 1000)}
-                        />
-                    </form>
-                </div>
-            </>
-        );
+    // if (!showResults)
     return (
         <>
             <div className="search-container">
@@ -79,16 +66,36 @@ const SearchBar = () => {
                         type="text"
                         placeholder="Search Artist, Albums, Songs"
                         onChange={_.debounce(handleOnChange, 1000)}
-                    />
-                    <SearchResults
-                        artistsFound={artists}
-                        albumsFound={albums}
-                        songsFound={tracks}
+                        autoFocus
                     />
                 </form>
             </div>
+
+            <SearchResults
+                resultsFound={deezerRes}
+                artistsFound={artists}
+            />
         </>
     );
+    // return (
+    //     <>
+    //         <div className="search-container">
+    //             <form onSubmit={handleSearch}>
+    //                 <FontAwesomeIcon className="icon-search" icon={faSearch} />
+    //                 <input
+    //                     type="text"
+    //                     placeholder="Search Artist, Albums, Songs"
+    //                     onChange={_.debounce(handleOnChange, 1000)}
+    //                 />
+    //                 <SearchResults
+    //                     artistsFound={artists}
+    //                     albumsFound={albums}
+    //                     songsFound={tracks}
+    //                 />
+    //             </form>
+    //         </div>
+    //     </>
+    // );
 
 
 }

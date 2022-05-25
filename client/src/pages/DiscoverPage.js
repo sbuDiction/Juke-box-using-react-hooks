@@ -1,9 +1,11 @@
 import Genres from "../components/Genres";
+import SearchBar from "../components/SearchBar";
 
 const DiscoverPage = () => {
     return (
         <div className="container-right">
-            <Genres />
+            <SearchBar />
+            {/* <Genres /> */}
         </div>
     );
 };
