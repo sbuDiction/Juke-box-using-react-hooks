@@ -1,9 +1,6 @@
-import { Link } from "react-router-dom";
-import ArtistCard from "../ArtistCard/ArtistCard";
-import Genres from "../Genres";
-import SongCard from "../SongCard/SongCard";
-import StandarCard from "../StandardCard/StandardCard";
-import ItemResult from "./ItemResults";
+import ArtistCard from '../ArtistCard/ArtistCard';
+import Genres from '../Genres';
+import SongCard from '../SongCard/SongCard';
 import './SearchResults.css';
 
 const SearchResults = ({ artistsFound = [], albumsFound = [], songsFound = [], resultsFound = [] }) => {
