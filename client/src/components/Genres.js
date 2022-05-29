@@ -14,7 +14,7 @@ const Genres = ({ isSearch }) => {
             setLoading(false);
         });
         return () => mounted = false;
-    });
+    },[]);
 
 
 

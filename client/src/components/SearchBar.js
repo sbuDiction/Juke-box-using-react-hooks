@@ -30,28 +30,6 @@ const SearchBar = () => {
                 console.log(res.data);
             });
 
-            // searchArtist(inputVal).then(res => {
-            //     setArtists(res.data);
-            //     console.log(res.data);
-            //     setResults(true);
-
-            //     // setResults(true);
-            // });
-
-            // searchAlbums(inputVal).then(res => {
-            //     setAlbums(res.data);
-            //     setResults(true);
-
-            //     console.log(res.data);
-            // });
-
-            // searchSongs(inputVal).then(res => {
-            //     setTracks(res.data);
-            //     setResults(true);
-
-            //     console.log(res.data);
-            // });
-
         }
         setResults(false);
     }
