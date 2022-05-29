@@ -2,7 +2,6 @@ import './MusicPlayer.css';
 import { useEffect, useState } from 'react';
 
 const MusicPlayer = ({ tracks }) => {
-    let currentTrack = 0;
     const [index, setIndex] = useState(0);
     const [isPlaying, setIsPlaying] = useState(false);
     const [audio] = useState(new Audio(tracks[index].preview));
@@ -14,10 +13,21 @@ const MusicPlayer = ({ tracks }) => {
 
     const toggleNext = () => {
         setIndex(index === tracks.length - 1 ? index : index + 1);
+        setIsPlaying(true);
+        audio.src = tracks[index === tracks.length - 1 ? index : index + 1].preview;
     };
+
+    const next = (i) => {
+        setIndex(index === tracks.length - 1 ? index : index + 1);
+        setIsPlaying(true);
+        audio.src = tracks[index === tracks.length - 1 ? index : index + 1].preview;
+    }
 
     const toggleBack = () => {
         setIndex(index <= 0 ? 0 : index - 1);
+        setIsPlaying(true);
+        audio.src = tracks[index === tracks.length - 1 ? index : index + 1].preview;
+
     }
 
 
@@ -26,6 +36,7 @@ const MusicPlayer = ({ tracks }) => {
         document.getElementById('vinyl').style.backgroundImage = `url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/83141/vinyl.png"), url(${tracks[index].album.cover_xl})`;
         isPlaying ? audio.play() : audio.pause();
         audio.addEventListener('ended', () => setIsPlaying(false));
+        audio.addEventListener('ended', () => next());
 
     });
 
