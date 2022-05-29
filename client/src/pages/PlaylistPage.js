@@ -13,7 +13,7 @@ const PlaylistPage = () => {
                     <SongCard song={song} isPlaylist />
                 ))
             } */}
-            <MusicPlayer song={songsArray[0]} />
+            <MusicPlayer tracks={songsArray} />
         </>
 
     )
