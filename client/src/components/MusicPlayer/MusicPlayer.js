@@ -5,14 +5,11 @@ const MusicPlayer = ({ tracks }) => {
     let currentTrack = 0;
     const [index, setIndex] = useState(0);
     const [isPlaying, setIsPlaying] = useState(false);
-    const [currentSong, setCurrentSong] = useState({});
-    const [trackList] = useState(tracks);
     const [audio] = useState(new Audio(tracks[index].preview));
 
     const togglePlayer = () => {
         setIsPlaying(!isPlaying);
-        // setAudio(new Audio(tracks[index].preview));
-        console.log(audio.src = tracks[index].preview);
+        audio.src = tracks[index].preview;
     };
 
     const toggleNext = () => {
@@ -22,12 +19,6 @@ const MusicPlayer = ({ tracks }) => {
     const toggleBack = () => {
         setIndex(index <= 0 ? 0 : index - 1);
     }
-
-    useEffect(() => {
-        // console.log(index);
-        // console.log(audio.srcObject);
-
-    });
 
 
     useEffect(() => {
