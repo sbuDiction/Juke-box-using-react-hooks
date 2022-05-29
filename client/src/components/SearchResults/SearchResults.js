@@ -19,17 +19,12 @@ const SearchResults = ({ artistsFound = [], albumsFound = [], songsFound = [], r
                         ))
                     }
                 </section>
+
                 <div className="container-right">
                     <h1>Artists</h1>
                     <div className="featured-artists">
                         {
                             artistsFound.map(artist => (
-                                // <StandarCard
-                                //     text={artist.artist.name}
-                                //     pic={artist.artist.picture_medium}
-                                //     key={artist.id}
-                                //     url={`/artist/${artist.artist.id}`}
-                                // />
                                 <ArtistCard artist={artist.artist} key={artist.id} />
                             ))
                         }

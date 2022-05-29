@@ -44,7 +44,7 @@ const AddToPlaylistButton = ({ track }) => {
     return (
         <>
             <div className='Track-Card'>
-                <button className='add'>Add</button>
+                <button onClick={handleAdd} className='add'>Add</button>
             </div>
         </>
     );

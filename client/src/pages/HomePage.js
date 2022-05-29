@@ -13,7 +13,7 @@ const HomePage = () => {
         let mounted = true;
         getTopSongs(5964916564).then(res => {
             if (mounted) setSongs(res.tracks.data);
-            setLoading(false)
+            setLoading(false);
         });
         return () => mounted = false;
     }, []);

@@ -1,3 +1,4 @@
+import MusicPlayer from "../components/MusicPlayer/MusicPlayer";
 import SongCard from "../components/SongCard/SongCard";
 
 
@@ -7,11 +8,12 @@ const PlaylistPage = () => {
     return (
         <>
             <h1>Playlist</h1>
-            {
+            {/* {
                 songsArray.map(song => (
                     <SongCard song={song} isPlaylist />
                 ))
-            }
+            } */}
+            <MusicPlayer song={songsArray[0]} />
         </>
 
     )
